@@ -490,6 +490,143 @@ body {
 .service-card .card-text { margin-block: 10px 20px; }
 
 
+
+
+/*-----------------------------------*\
+  #FEATURE
+\*-----------------------------------*/
+
+.feature .title-wrapper { margin-block-end: 30px; }
+
+.feature .section-text { margin-block: 20px 40px; }
+
+.feature-card {
+  position: relative;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid var(--alice-blue);
+  transition: var(--transition);
+}
+
+.feature-card:is(:hover, :focus-within) { box-shadow: var(--shadow-3); }
+
+.feature-card::before {
+  content: var(--card-number);
+  color: var(--cultured-1);
+  font-family: var(--ff-oswald);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.feature-card:is(:hover, :focus-within)::before { color: #f9ad07; }
+
+.feature-card .card-icon {
+  background-color: var(--alice-blue);
+  width: 170px;
+  height: 170px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  margin-inline: auto;
+  margin-block-end: 30px;
+}
+
+.feature-card .card-text { margin-block: 20px 40px; }
+
+.feature-card .card-btn {
+  color: var(--prussian-blue);
+  font-size: 24px;
+  border: 2px solid var(--prussian-blue);
+  max-width: max-content;
+  margin-inline: auto;
+  padding: 10px 18px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #PROJECT
+\*-----------------------------------*/
+
+.project { background-color: var(--alice-blue); }
+
+.project :is(.section-subtitle, .section-title, .section-text) { text-align: center; }
+
+.project .section-text { margin-block: 20px 50px; }
+
+.project-card { position: relative; }
+
+.project-card .action-btn {
+  background-color: #f9ad07;
+  color: var(--white);
+  font-size: 28px;
+  padding: 16px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-card:is(:hover, :focus-within) .action-btn { opacity: 1; }
+
+.project-card .card-tag {
+  color: #f9ad07;
+  font-size: var(--fs-9);
+}
+
+.project-card .card-content {
+  position: relative;
+  background-color: var(--white);
+  padding: 20px 30px;
+  margin-block-start: -50px;
+  margin-inline-start: 30px;
+}
+
+.project-card .h3 { font-size: var(--fs-7); }
+
+.project-card .card-title { transition: var(--transition); }
+
+.project-card :is(.card-title, .card-link):is(:hover, :focus) { color: #f9ad07; }
+
+.project-card .card-link {
+  color: var(--prussian-blue);
+  font-size: var(--fs-10);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  margin-block-start: 5px;
+  transition: var(--transition);
+}
+
+.project-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-block-end: 40px;
+  scroll-snap-type: inline mandatory;
+}
+
+.project-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.project-list::-webkit-scrollbar { height: 15px; }
+
+.project-list::-webkit-scrollbar-track { outline: 2px solid var(--prussian-blue); }
+
+.project-list::-webkit-scrollbar-thumb {
+  border: 3px solid var(--cultured-1);
+  background-color: var(--prussian-blue);
+}
+
+.project-list::-webkit-scrollbar-button { width: calc(25% - 40px); }
+
+
 /*-----------------------------------*\
   #MEDIA QUERISE
 \*-----------------------------------*/
@@ -634,6 +771,24 @@ body {
     padding: 12px 30px;
   }
 
+
+
+  /**
+   * FEATURES
+   */
+
+  .feature-card::before { --fs-1: 10rem; }
+
+
+
+  /**
+   * PROJECT
+   */
+
+  .project-list { gap: 80px; }
+
+  .project-item { min-width: calc(50% - 40px); }
+
 }
 
 
@@ -736,6 +891,41 @@ body {
 
   .about :is(.section-title, .section-text) { margin-block-end: 35px; }
 
+
+
+  /**
+   * FEATURE
+   */
+
+  .feature .title-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: self-end;
+  }
+
+  .feature .section-text { margin-block-end: 0; }
+
+  .feature-list { margin-block-start: 120px; }
+
+  .feature-card { padding-block-start: 80px; }
+
+  .feature-card::before {
+    --fs-1: 16rem;
+    position: absolute;
+    top: -90px;
+    left: 20px;
+  }
+
+
+
+  /**
+   * PROJECT
+   */
+
+  .project-item { min-width: calc(33.33% - 53.33px); }
+
+
 }
 
 
@@ -782,5 +972,6 @@ body {
   .about-banner { max-width: 370px; }
 
   .about .abs-img-2 { width: max-content; }
+
 
 }
